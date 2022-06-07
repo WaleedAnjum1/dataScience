@@ -1,0 +1,38 @@
+DOWNLOAD DATA:
+
+fileURL <- "URL.COM"
+download.file(fileURL, destfile = "./data/cameras.csv"
+
+
+DATAFRAME:
+
+creditDF <- read.csv("data/german_credit_data.csv")
+pollution <- read.csv("data/avgpm25.csv", colClasses = c("numeric", "character","factor", "numeric", "numeric"))
+
+REMOVING NA VALUES:
+
+na.omit(creditDF)
+
+BARPLOT:
+
+barplot(table(creditDF1$Checking.account), main = "Count Checking Account")
+
+
+BOXPLOT:
+
+boxplot(Credit.amount ~ Checking.account, data = creditDF1, col = "Red", main = "Age by Saving Accounts")
+
+HISTOGRAM:
+
+hist(creditDF1$Duration, col = "Blue", main = "Duration Distribution")
+qplot(Credit.amount, data = creditDF1, fill = creditDF1$Credit.amount, binwidth = 500)
+
+
+VIOLIN GRAPH:
+
+ggplot(creditDF1, aes(x = Purpose, y = Age)) + geom_violin(trim = FALSE, fill = '#A4A4A4', color = "Red") + geom_boxplot(width = 0.1) + theme_minimal()
+
+LINE GRAPH:
+
+ggplot(data = creditDF1, aes(x = Duration, y = Credit.amount, group = 1)) + geom_line()
+ggplot(data = creditDF1, aes(x = Duration, y = Credit.amount, group = 1)) + geom_line() + geom_smooth() + geom_point()
